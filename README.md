@@ -17,6 +17,8 @@ Using:
 
 Also during inference we include retrieved products inside a context. After some threshold we replace initial product description with output of text summarization to save context space and to highlight recent products in dialog. Storing several product information as much as possible helps us to compare, tell difference or reference them during conversation.
 
+HyDE used for IR system. We choose unsupervised cons. learned method, because of amount of data. HyDE first generates how would answer look like, template of the answer. Then using Contriever we search for right products. 
+
 
 ## Installation
 Sorry no docker images :(. 
