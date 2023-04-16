@@ -29,7 +29,7 @@ FISCHER_DATA_PATH = "/root/chatbot/Alpaca-LoRA-Serve/mesh_hack/dataset_fischer.c
 HyDE_INSTRUCTION = "Please write a passage to answer the question as a worker of Fischerwerke. Use professional language.\nQuestion: {}"
 
 CONTEXT_SEARCH_THRESHOLD = 0.8
-SUGGEST_DOCUMENTS_THRESHOLD = 0.75
+SUGGEST_DOCUMENTS_THRESHOLD = 0.6
 
 def load_dataset_hyde(path=FISCHER_DATA_PATH):
     return load_dataset(

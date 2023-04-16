@@ -77,13 +77,18 @@ def chat_stream(
     if len(state_recieved_docs) == 0:
         no_recent_retrieve = True
     while len(state_recieved_docs) > 5: state_recieved_docs.pop(0)
-    
-    context_short_descs = "\n".join([
-            dataset[ind]['short_desc'] for ind, embed in state_recieved_docs[:3]
-    ])
-    context_long_descs = "\n".join([
+    if len(state_recieved_docs) > 3:
+        context_short_descs = "\n".join([
+                dataset[ind]['short_desc'] for ind, embed in state_recieved_docs[:3]
+        ])
+        context_long_descs = "\n".join([
             dataset[ind]['text'] for ind, embed in state_recieved_docs[3:]
-    ])
+        ])
+    else:
+        context_short_descs = ""
+        context_long_descs = "\n".join([
+            dataset[ind]['text'] for ind, embed in state_recieved_docs
+        ])
 
     context_with_documents = context + "\n" + context_short_descs + "\n" + context_long_descs + '\n'
     
@@ -124,8 +129,8 @@ def chat_stream(
         bot_response = global_vars.stream_model(
             instruction_prompt,
             max_tokens=256,
-            temperature=0.75,
-            top_p=0.80
+            temperature=0.5,
+            top_p=0.75
         )
     
     instruction_display = None if instruction_display == SPECIAL_STRS["continue"] else instruction_display
