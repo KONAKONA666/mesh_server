@@ -1,0 +1,48 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "default",
+  "dataset_size": 623715,
+  "description": "",
+  "download_checksums": {
+    "/workspace/alpaca-lora/dataset_fischer.csv": {
+      "num_bytes": 621850,
+      "checksum": null
+    }
+  },
+  "download_size": 621850,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "title": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "embeddings": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1245565,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 623715,
+      "num_examples": 486,
+      "dataset_name": "csv"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

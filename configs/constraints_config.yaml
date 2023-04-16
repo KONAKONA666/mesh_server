@@ -1,0 +1,4 @@
+constraints:
+    max_context: 300000
+    max_prompt: 300
+    max_conv_len: 2500
